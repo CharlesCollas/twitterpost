@@ -2,11 +2,12 @@
   "name": "twitterapi",
   "version": "1.0.0",
   "description": "Send tweets to users tweeting with specific keywords",
-  "engines": {
-    "node": "0.8"
-  },
   "main": "app.js",
+  "engines": {
+    "node": "0.12.2"
+  },
   "dependencies": {
+    "express": "^5.0.0-alpha.1",
     "jade": "1.9.2"
   },
   "scripts": {
