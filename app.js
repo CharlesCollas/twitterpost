@@ -15,11 +15,13 @@ app.get('/', function (req, res) {
   	res.render('index', {title: 'Search and post tweets', tweets: []});
 });
 
+var port = process.env.PORT || 5000;
+
 var client = new Twitter({
-  	consumer_key: '',
-  	consumer_secret: '',
-  	access_token_key: '',
-  	access_token_secret: ''
+  	consumer_key: process.env.CONSUMER_KEY,
+  	consumer_secret: process.env.CONSUMER_SECRET_KEY,
+  	access_token_key: process.env.TOKEN_KEY,
+  	access_token_secret: process.env.TOKEN_SECRET_KEY
 });
 
 app.post('/searchonly', function (req, res) {
@@ -62,6 +64,6 @@ app.post('/searchandpost', function (req, res) {
 	});
 });
 
-app.listen(8080, function () {
-  	console.log('Server running at http://127.0.0.1:8080/');
+app.listen(port, function () {
+  	console.log('Server running');
 });
